@@ -57,4 +57,10 @@ public class LiDarWorkerTracker {
     public void setLastTrackedObjects(List<TrackedObject> lastTrackedObjects) {
         this.lastTrackedObjects = lastTrackedObjects;
     }
+    public TrackedObject trackObject(int time) {
+        if (time/frequency > lastTrackedObjects.size()) {
+            return null;
+        }
+        return lastTrackedObjects.get(time/frequency);
+    }
 }

@@ -6,13 +6,13 @@ import bgu.spl.mics.application.objects.TrackedObject;
 import java.util.List;
 
 public class TrackedObjectsEvent implements Event<List<TrackedObject>> {
-    List<TrackedObject> trackedObjects;
+    TrackedObject trackedObjects;
 
-    public TrackedObjectsEvent(List<TrackedObject> trackedObjects) {
+    public TrackedObjectsEvent(TrackedObject trackedObjects) {
         this.trackedObjects = trackedObjects;
     }
 
-    public List<TrackedObject> getTrackedObjects() {
+    public TrackedObject getTrackedObjects() {
         return trackedObjects;
     }
 }

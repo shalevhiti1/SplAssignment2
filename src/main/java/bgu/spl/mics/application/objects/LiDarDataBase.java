@@ -19,6 +19,8 @@ public class LiDarDataBase {
      * @return The singleton instance of LiDarDataBase.
      */
     public static LiDarDataBase getInstance(String filePath) {
+\
+        \
 
     }
 }
