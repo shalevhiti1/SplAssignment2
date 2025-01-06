@@ -1,5 +1,9 @@
 package bgu.spl.mics.application.objects;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import sun.security.krb5.Config;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +16,12 @@ public class LiDarDataBase {
     public LiDarDataBase() {
         cloudPoints = new ArrayList<StampedCloudPoints>();
     }
+    public List<StampedCloudPoints> getCloudPoints() {
+        return cloudPoints;
+    }
+    public void addCloudPoints(StampedCloudPoints cloudPoints) {
+        this.cloudPoints.add(cloudPoints);
+    }
     /**
      * Returns the singleton instance of LiDarDataBase.
      *
@@ -19,8 +29,7 @@ public class LiDarDataBase {
      * @return The singleton instance of LiDarDataBase.
      */
     public static LiDarDataBase getInstance(String filePath) {
-\
-        \
+        Gson gson = new Gson();
 
     }
 }

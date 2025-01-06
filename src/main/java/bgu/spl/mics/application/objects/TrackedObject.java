@@ -13,14 +13,18 @@ public class TrackedObject {
     private int time;
     private String description;
     private List<CloudPoint> coordinates;
-    public TrackedObject(String id, String description) {
+    public TrackedObject(String id, String description, int time) {
         this.id = id;
         this.description = description;
         this.coordinates = new ArrayList<CloudPoint>();
-        this.time = 0;
+        this.time = time;
     }
     public String getId() {
         return id;
+    }
+    public int tick(){
+        time--;
+        return time;
     }
     public int getTime() {
         return time;

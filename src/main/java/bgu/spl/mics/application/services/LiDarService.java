@@ -34,10 +34,9 @@ public class LiDarService extends MicroService {
     protected void initialize() {
 
         subscribeBroadcast(TickBroadcast.class, (TickBroadcast t) -> {
-            TrackedObject obj = lidarTracker.trackObject(t.getTick());
-            if (obj != null) {
-                sendEvent(new TrackedObjectsEvent(obj));
-            }
+            int tick=t.getTick();
+            lidarTracker.tick(tick);
+
         });
         subscribeBroadcast(TerminatedBroadcast.class, (TerminatedBroadcast t) -> {
             if (t.getSenderName().equals("TimeService")) {
